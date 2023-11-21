@@ -1,0 +1,9 @@
+res://Player/ninja.tscn
+res://Inimigos/slime.tscn
+res://level_01.tscn
+res://Components/attackBox_Component.cs
+res://Components/health_component.cs
+res://Components/hitBox_Component.cs
+res://Inimigos/slime.cs
+res://Player/ninjaCharacter.cs
+res://Player/ninjaGeral.cs

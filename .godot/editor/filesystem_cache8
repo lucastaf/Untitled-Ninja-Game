@@ -1,0 +1,70 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1700516627
+level_01.tscn::PackedScene::8326684704424931944::1700496057::0::1::::<><>::uid://b6wf30o23isqd::::res://Player/ninja.tscn<>uid://ce5wkl2c1ikly::::res://Cenario/TileMap_01.tscn<>uid://vedsoorhj6eg::::res://Inimigos/slime.tscn
+::res://Bibliotecas/::1700341763
+icon.svg::CompressedTexture2D::4519943865056386899::1700272672::1700341763::1::::<><>::
+::res://Bibliotecas/addons/::1700274084
+::res://Bibliotecas/addons/AS2P/::1700274084
+InspectorConvertor.gd::GDScript::-1::1700274084::0::1::::<>EditorInspectorPlugin<>::
+NodeSelectorProperty.gd::GDScript::-1::1700274084::0::1::::<>EditorProperty<>::
+plugin.cfg::TextFile::-1::1700274084::0::1::::<><>::
+plugin.gd::GDScript::-1::1700274084::0::1::::<>EditorPlugin<>::
+::res://Bibliotecas/Inimigos/::1700341329
+::res://Bibliotecas/Inimigos/archer/::1700341343
+attack.png::CompressedTexture2D::4991751306411841710::1592926182::1700341343::1::::<><>::
+hit and death.png::CompressedTexture2D::8958910705543878401::1592926211::1700341343::1::::<><>::
+idle.png::CompressedTexture2D::273944849948600747::1592926134::1700341343::1::::<><>::
+jump fall land.png::CompressedTexture2D::7439257747928460476::1592926169::1700341343::1::::<><>::
+projectile.png::CompressedTexture2D::884000527659498380::1592926225::1700341343::1::::<><>::
+run.png::CompressedTexture2D::1925741563760025145::1592926150::1700341343::1::::<><>::
+::res://Bibliotecas/Inimigos/Barrel Knight/::1700341343
+attacks.png::CompressedTexture2D::3457876938874569885::1592927352::1700341343::1::::<><>::
+death.png::CompressedTexture2D::7554256038883707253::1592927430::1700341343::1::::<><>::
+hit and to idle.png::CompressedTexture2D::8634298670678004434::1592927415::1700341343::1::::<><>::
+run.png::CompressedTexture2D::6258732812191819158::1592927321::1700341343::1::::<><>::
+wake.png::CompressedTexture2D::454979405710516249::1592927308::1700341343::1::::<><>::
+::res://Bibliotecas/Inimigos/Slime/::1700341343
+attack.png::CompressedTexture2D::1605930104794052077::1592926075::1700341343::1::::<><>::
+hit and death.png::CompressedTexture2D::1734224403403996595::1592926099::1700341343::1::::<><>::
+hop.png::CompressedTexture2D::8694745395201978437::1592926062::1700341343::1::::<><>::
+idle.png::CompressedTexture2D::6426615956797552600::1592926050::1700341343::1::::<><>::
+::res://Bibliotecas/Ninja Asset Pack/::1498178414
+::res://Bibliotecas/Ninja Asset Pack/Background/::1498178585
+::res://Bibliotecas/Ninja Asset Pack/Background/Layers/::1700325290
+0.png::CompressedTexture2D::8409027924951129064::1498178471::1700325290::1::::<><>::
+1.png::CompressedTexture2D::5225439301772782339::1498178510::1700325290::1::::<><>::
+3.png::CompressedTexture2D::4048649621163877012::1498178558::1700325290::1::::<><>::
+::res://Bibliotecas/Ninja Asset Pack/Ninja/::1498175633
+::res://Bibliotecas/Ninja Asset Pack/Ninja/Files/::1498175633
+::res://Bibliotecas/Ninja Asset Pack/Ninja/Sprites/::1498175857
+::res://Bibliotecas/Ninja Asset Pack/Ninja/Sprites/Gifs/::1498175857
+::res://Bibliotecas/Ninja Asset Pack/Ninja/Sprites/Sprite Sheets/::1700325290
+death-Sheet.png::CompressedTexture2D::5270790362960104630::1498176562::1700325290::1::::<><>::
+hurt-Sheet.png::CompressedTexture2D::4966938477651983246::1498176380::1700325290::1::::<><>::
+idle-Sheet.png::CompressedTexture2D::7294983083733575582::1498176260::1700325290::1::::<><>::
+long jump&fall anim-Sheet.png::CompressedTexture2D::5302275276972190692::1498176547::1700325290::1::::<><>::
+quick jump&fall anim-Sheet.png::CompressedTexture2D::5769376099011150455::1498176422::1700325290::1::::<><>::
+run-Sheet.png::CompressedTexture2D::6204470508855460933::1498176510::1700325290::1::::<><>::
+slash-Sheet.png::CompressedTexture2D::4859314056132999138::1498176467::1700325290::1::::<><>::
+sneaky walk-Sheet.png::CompressedTexture2D::1570306760641677894::1498176303::1700325290::1::::<><>::
+throw-Sheet.png::CompressedTexture2D::1777609340847434247::1498176083::1700325290::1::::<><>::
+::res://Bibliotecas/Ninja Asset Pack/Tiles/::1700325290
+Tileset.png::CompressedTexture2D::8315903797994367997::1498177051::1700325290::1::::<><>::
+::res://Cenario/::1700403624
+TileMap_01.tscn::PackedScene::5116882325932548886::1700403624::0::1::::<><>::uid://dqqjyq83vosqv
+::res://Components/::1700495584
+attackBox_Component.cs::CSharpScript::-1::1700411958::0::1::::<><>::
+attack_box_Component.tscn::PackedScene::7906184190519723292::1700412867::0::1::::<><>::res://Components/attackBox_Component.cs
+HealthBackGroundStyle.tres::StyleBoxFlat::3213828307566707162::1700495032::0::1::::<><>::
+health_component.cs::CSharpScript::-1::1700495584::0::1::::<><>::
+health_component.tscn::PackedScene::3614688376077623904::1700403781::0::1::::<><>::res://Components/health_component.cs
+hitBox_Component.cs::CSharpScript::-1::1700413036::0::1::::<><>::
+hitBox_Component.tscn::PackedScene::7987383575344520020::1700405672::0::1::::<><>::res://Components/hitBox_Component.cs
+::res://Inimigos/::1700496057
+slime.cs::CSharpScript::-1::1700432306::0::1::::<><>::
+slime.tscn::PackedScene::1482438280419816802::1700496057::0::1::::<><>::res://Inimigos/slime.cs<>uid://yycomp6ys7s6::::res://Bibliotecas/Inimigos/Slime/hit and death.png<>uid://cxtdoqkk5kpx5::::res://Bibliotecas/Inimigos/Slime/idle.png<>uid://dv42gln65ged6::::res://Bibliotecas/Inimigos/Slime/hop.png<>uid://brq8nigut6mea::::res://Components/health_component.tscn<>uid://dl2fbm3ndc6ds::::res://Components/hitBox_Component.tscn<>uid://dkv2x0qh6f8qa::::res://Components/attack_box_Component.tscn
+::res://Player/::1700496057
+ninja.tscn::PackedScene::4608046070230114507::1700496057::0::1::::<><>::res://Player/ninjaGeral.cs<>res://Player/ninjaCharacter.cs<>uid://cbh5gst8jx6q5::::res://Bibliotecas/Ninja Asset Pack/Ninja/Sprites/Sprite Sheets/slash-Sheet.png<>uid://cc1a0shgwpee5::::res://Bibliotecas/Ninja Asset Pack/Ninja/Sprites/Sprite Sheets/hurt-Sheet.png<>uid://db60knip36tby::::res://Bibliotecas/Ninja Asset Pack/Ninja/Sprites/Sprite Sheets/idle-Sheet.png<>uid://chspx1g8pa20w::::res://Bibliotecas/Ninja Asset Pack/Ninja/Sprites/Sprite Sheets/long jump&fall anim-Sheet.png<>uid://chdhfaf1p6agc::::res://Bibliotecas/Ninja Asset Pack/Ninja/Sprites/Sprite Sheets/death-Sheet.png<>uid://cogy1tlq2q6al::::res://Bibliotecas/Ninja Asset Pack/Ninja/Sprites/Sprite Sheets/quick jump&fall anim-Sheet.png<>uid://cunqyts12id1v::::res://Bibliotecas/Ninja Asset Pack/Ninja/Sprites/Sprite Sheets/run-Sheet.png<>uid://wmwytx1evtl3::::res://Bibliotecas/Ninja Asset Pack/Ninja/Sprites/Sprite Sheets/sneaky walk-Sheet.png<>uid://0lc7333xfwih::::res://Bibliotecas/Ninja Asset Pack/Ninja/Sprites/Sprite Sheets/throw-Sheet.png<>uid://dkv2x0qh6f8qa::::res://Components/attack_box_Component.tscn<>uid://bl12ju1ox3gja::::res://Components/HealthBackGroundStyle.tres<>uid://dl2fbm3ndc6ds::::res://Components/hitBox_Component.tscn<>uid://brq8nigut6mea::::res://Components/health_component.tscn
+ninjaCharacter.cs::CSharpScript::-1::1700495876::0::1::::<><>::
+ninjaGeral.cs::CSharpScript::-1::1700327088::0::1::::<><>::
+::res://Player/Untitled-Ninja-Game/::1700403399

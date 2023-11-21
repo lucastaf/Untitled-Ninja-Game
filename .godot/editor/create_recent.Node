@@ -1,0 +1,13 @@
+ProgressBar
+Node2D
+Area2D
+RemoteTransform2D
+CollisionShape2D
+CanvasLayer
+AnimationTree
+AnimationPlayer
+AnimatedSprite2D
+CharacterBody2D
+RigidBody2D
+Camera2D
+TileMap
