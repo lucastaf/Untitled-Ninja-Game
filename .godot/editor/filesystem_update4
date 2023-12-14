@@ -1,9 +1,13 @@
-res://Player/ninja.tscn
-res://Inimigos/slime.tscn
-res://level_01.tscn
+res://Inimigos/archer.tscn
+res://Inimigos/arrow.tscn
 res://Components/attackBox_Component.cs
 res://Components/health_component.cs
 res://Components/hitBox_Component.cs
+res://Inimigos/archer.cs
+res://Inimigos/arrow.cs
 res://Inimigos/slime.cs
 res://Player/ninjaCharacter.cs
 res://Player/ninjaGeral.cs
+res://Player/ninja.tscn
+res://level_01.tscn
+res://Inimigos/slime.tscn

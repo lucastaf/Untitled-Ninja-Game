@@ -1,11 +1,9 @@
-using Godot;
+ using Godot;
 using System;
 using System.Linq.Expressions;
 
 public partial class slime : CharacterBody2D
 {
-	[Export] public health_component health;
-	[Export] public hitBox_Component hitBox;
 	[Export] private CollisionShape2D attackColission;
 
 

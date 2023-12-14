@@ -716,6 +716,7 @@ size = Vector2(10.5, 18)
 
 [node name="Ninja" type="Node2D"]
 script = ExtResource("1_l64xa")
+metadata/_edit_horizontal_guides_ = [-94.0]
 
 [node name="NinjaCharacter" type="CharacterBody2D" parent="."]
 position = Vector2(-3, -4)
@@ -730,7 +731,6 @@ texture_filter = 1
 position = Vector2(1, 0)
 sprite_frames = SubResource("SpriteFrames_etuy2")
 animation = &"run"
-frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="NinjaCharacter/Animations"]
 root_node = NodePath("../AnimatedSprite2D")

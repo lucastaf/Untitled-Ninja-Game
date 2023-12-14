@@ -37,7 +37,7 @@ public partial class ninjaCharacter : CharacterBody2D
             numPulos = 2;
             if (!onGround)
             {
-                GD.Print("Puff");
+                //PUFF
             }
             onGround = true;
         }
@@ -62,6 +62,7 @@ public partial class ninjaCharacter : CharacterBody2D
         if (direction != Vector2.Zero)
         {
             velocity.X = direction.X * Speed;
+            
         }
         else
         {
@@ -77,7 +78,7 @@ public partial class ninjaCharacter : CharacterBody2D
                 dashTimer = 15;
                 staminaComponent.takeDamage(250);
             }
-        }
+        } 
         if (dashTimer > 0)
         {
             dashTimer--;
