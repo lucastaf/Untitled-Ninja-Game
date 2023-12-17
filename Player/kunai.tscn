@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://dwp3krxdqnchn"]
+
+[ext_resource type="Script" path="res://Player/kunai.cs" id="1_26j1q"]
+[ext_resource type="PackedScene" uid="uid://dkv2x0qh6f8qa" path="res://Components/attack_box_Component.tscn" id="3_2ldyk"]
+[ext_resource type="Texture2D" uid="uid://bq5v6510ibk76" path="res://Bibliotecas/kunai pronta.png" id="3_78u7f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uueo2"]
+size = Vector2(8, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v2b6u"]
+size = Vector2(8, 2)
+
+[node name="arrow" type="RigidBody2D"]
+collision_layer = 0
+gravity_scale = 0.1
+max_contacts_reported = 3
+contact_monitor = true
+script = ExtResource("1_26j1q")
+
+[node name="attackBox" parent="." instance=ExtResource("3_2ldyk")]
+position = Vector2(0, 2)
+collision_layer = 4
+collision_mask = 0
+damage = 10
+
+[node name="hitboxShape" type="CollisionShape2D" parent="attackBox"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_uueo2")
+debug_color = Color(0.847059, 0.313726, 0.529412, 0.419608)
+
+[node name="physics shape" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_v2b6u")
+debug_color = Color(0.533333, 0.537255, 0.509804, 0.419608)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-3.8147e-06, -1.90735e-06)
+rotation = -1.5708
+scale = Vector2(0.00324361, 0.00324361)
+texture = ExtResource("3_78u7f")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

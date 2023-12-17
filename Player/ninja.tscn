@@ -1,9 +1,9 @@
 [gd_scene load_steps=91 format=3 uid="uid://b6wf30o23isqd"]
 
-[ext_resource type="Script" path="res://Player/ninjaGeral.cs" id="1_l64xa"]
-[ext_resource type="Script" path="res://Player/ninjaCharacter.cs" id="2_eoyl8"]
+[ext_resource type="Script" path="res://Player/ninjaCharacter.cs" id="1_5nl8m"]
 [ext_resource type="Texture2D" uid="uid://cbh5gst8jx6q5" path="res://Bibliotecas/Ninja Asset Pack/Ninja/Sprites/Sprite Sheets/slash-Sheet.png" id="2_ojfl1"]
 [ext_resource type="Texture2D" uid="uid://cc1a0shgwpee5" path="res://Bibliotecas/Ninja Asset Pack/Ninja/Sprites/Sprite Sheets/hurt-Sheet.png" id="3_m881r"]
+[ext_resource type="PackedScene" uid="uid://dwp3krxdqnchn" path="res://Player/kunai.tscn" id="3_xr4vd"]
 [ext_resource type="Texture2D" uid="uid://db60knip36tby" path="res://Bibliotecas/Ninja Asset Pack/Ninja/Sprites/Sprite Sheets/idle-Sheet.png" id="4_yqxmi"]
 [ext_resource type="Texture2D" uid="uid://chspx1g8pa20w" path="res://Bibliotecas/Ninja Asset Pack/Ninja/Sprites/Sprite Sheets/long jump&fall anim-Sheet.png" id="5_ik3kk"]
 [ext_resource type="Texture2D" uid="uid://chdhfaf1p6agc" path="res://Bibliotecas/Ninja Asset Pack/Ninja/Sprites/Sprite Sheets/death-Sheet.png" id="6_svbg6"]
@@ -714,47 +714,45 @@ size = Vector2(14, 25)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kec4d"]
 size = Vector2(10.5, 18)
 
-[node name="Ninja" type="Node2D"]
-script = ExtResource("1_l64xa")
-metadata/_edit_horizontal_guides_ = [-94.0]
-
-[node name="NinjaCharacter" type="CharacterBody2D" parent="."]
+[node name="NinjaCharacter" type="CharacterBody2D"]
 position = Vector2(-3, -4)
 collision_layer = 2
 collision_mask = 25
-script = ExtResource("2_eoyl8")
+script = ExtResource("1_5nl8m")
+kunaiScene = ExtResource("3_xr4vd")
 
-[node name="Animations" type="Node2D" parent="NinjaCharacter"]
+[node name="Animations" type="Node2D" parent="."]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="NinjaCharacter/Animations"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Animations"]
 texture_filter = 1
 position = Vector2(1, 0)
 sprite_frames = SubResource("SpriteFrames_etuy2")
 animation = &"run"
+frame = 2
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="NinjaCharacter/Animations"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Animations"]
 root_node = NodePath("../AnimatedSprite2D")
 libraries = {
 "": SubResource("AnimationLibrary_i24g8")
 }
 
-[node name="AnimationTree" type="AnimationTree" parent="NinjaCharacter/Animations"]
+[node name="AnimationTree" type="AnimationTree" parent="Animations"]
 tree_root = SubResource("AnimationNodeStateMachine_iypik")
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/IWR/blend_position = Vector2(98.56, 0.625)
 
-[node name="Camera2D" type="Camera2D" parent="NinjaCharacter"]
+[node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
 position_smoothing_enabled = true
 
-[node name="PlayerShape" type="CollisionShape2D" parent="NinjaCharacter"]
+[node name="PlayerShape" type="CollisionShape2D" parent="."]
 position = Vector2(2.5, 4)
 shape = SubResource("RectangleShape2D_sgoai")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="NinjaCharacter"]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="lifeBar" type="ProgressBar" parent="NinjaCharacter/CanvasLayer"]
+[node name="lifeBar" type="ProgressBar" parent="CanvasLayer"]
 texture_filter = 1
 offset_left = 49.0
 offset_top = 20.0
@@ -766,7 +764,7 @@ max_value = 10.0
 value = 10.0
 show_percentage = false
 
-[node name="stamina" type="ProgressBar" parent="NinjaCharacter/CanvasLayer"]
+[node name="stamina" type="ProgressBar" parent="CanvasLayer"]
 offset_left = 48.0
 offset_top = 54.0
 offset_right = 356.0
@@ -777,36 +775,39 @@ max_value = 10.0
 value = 10.0
 show_percentage = false
 
-[node name="attackBox" parent="NinjaCharacter" instance=ExtResource("12_68soq")]
+[node name="attackBox" parent="." instance=ExtResource("12_68soq")]
 collision_layer = 4
 collision_mask = 0
 damage = 5
 
-[node name="AttackColision" type="CollisionShape2D" parent="NinjaCharacter/attackBox"]
+[node name="AttackColision" type="CollisionShape2D" parent="attackBox"]
 position = Vector2(14, 3.5)
 shape = SubResource("RectangleShape2D_5qk8w")
 disabled = true
 debug_color = Color(0.882353, 0.192157, 0.682353, 0.419608)
 
-[node name="HitBox" parent="NinjaCharacter" node_paths=PackedStringArray("health") instance=ExtResource("14_xqt4e")]
+[node name="HitBox" parent="." node_paths=PackedStringArray("health") instance=ExtResource("14_xqt4e")]
 position = Vector2(1, 0)
 collision_layer = 2
 collision_mask = 24
 health = NodePath("../HealthComponent")
 
-[node name="EnemyColisionShape" type="CollisionShape2D" parent="NinjaCharacter/HitBox"]
+[node name="EnemyColisionShape" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(1.75, 4)
 shape = SubResource("RectangleShape2D_kec4d")
 debug_color = Color(0.870588, 0.109804, 0.8, 0.419608)
 
-[node name="HealthComponent" parent="NinjaCharacter" node_paths=PackedStringArray("healthbar") instance=ExtResource("15_mmsjr")]
+[node name="HealthComponent" parent="." node_paths=PackedStringArray("healthbar") instance=ExtResource("15_mmsjr")]
 position = Vector2(1, 0)
 totalHealth = 1
 healthbar = NodePath("../CanvasLayer/lifeBar")
 
-[node name="StaminaComponent" parent="NinjaCharacter" node_paths=PackedStringArray("healthbar") instance=ExtResource("15_mmsjr")]
+[node name="StaminaComponent" parent="." node_paths=PackedStringArray("healthbar") instance=ExtResource("15_mmsjr")]
 totalHealth = 1000
 healthbar = NodePath("../CanvasLayer/stamina")
 
-[connection signal="animation_finished" from="NinjaCharacter/Animations/AnimationTree" to="NinjaCharacter" method="_animation_finished"]
-[connection signal="Death" from="NinjaCharacter/HealthComponent" to="NinjaCharacter" method="_on_health_component_death"]
+[node name="Ninja" type="Node2D" parent="."]
+metadata/_edit_horizontal_guides_ = [-94.0]
+
+[connection signal="animation_finished" from="Animations/AnimationTree" to="." method="_animation_finished"]
+[connection signal="Death" from="HealthComponent" to="." method="_on_health_component_death"]

@@ -3,6 +3,7 @@ using System;
 
 public partial class ninjaCharacter : CharacterBody2D
 {
+    [Export] private PackedScene kunaiScene;
     public const float Speed = 100.0f;
     public const float JumpVelocity = -300.0f;
     public float gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
@@ -13,7 +14,7 @@ public partial class ninjaCharacter : CharacterBody2D
     private int dashTimer = 0;
     private int numPulos = 2;
     private bool onGround;
-    
+
 
     public override void _Ready()
     {
@@ -55,14 +56,31 @@ public partial class ninjaCharacter : CharacterBody2D
             colisaoAtaque.Disabled = false;
             AnimacoesStationMachine.Travel("ataque");
         }
+        if (Input.IsActionJustPressed("kunai"))
+        {
+            kunai kunaiNode = (kunai)kunaiScene.Instantiate();
+            kunaiNode.Transform = this.Transform;
+            kunaiNode.Rotation = this.Rotation;
+            kunaiNode.ApplyCentralImpulse(new Vector2(this.Scale.Y * 500, 0));
+
+            this.GetParent().AddChild(kunaiNode);
+        }
+        if (Input.IsActionJustPressed("dash"))
+        {
+            if (staminaComponent.currentHealth > 250)
+            {
+                dashTimer = 15;
+                staminaComponent.takeDamage(250);
+            }
+        }
         //FIM DOS INPUTS///
-        
+
         //DEFINIR DIRECAO
         Vector2 direction = Input.GetVector("esquerda", "direita", "ui_up", "ui_down");
         if (direction != Vector2.Zero)
         {
             velocity.X = direction.X * Speed;
-            
+
         }
         else
         {
@@ -70,26 +88,7 @@ public partial class ninjaCharacter : CharacterBody2D
         }
         //------FIM DA DIRECAO-----//
 
-        Animacoes.Set("parameters/IWR/blend_position", velocity.Abs());
-        if (Input.IsActionJustPressed("dash"))
-        {
-            if(staminaComponent.currentHealth > 250)
-            {
-                dashTimer = 15;
-                staminaComponent.takeDamage(250);
-            }
-        } 
-        if (dashTimer > 0)
-        {
-            dashTimer--;
-            velocity.X = direction.X * Speed * 3;   
-        }
-        staminaComponent.takeHealth(1);
-        Velocity = velocity;
-        MoveAndSlide();
-        
-        
-        
+        //Direcao
         if (velocity.X > 0)
         {
             this.RotationDegrees = 0;
@@ -100,12 +99,29 @@ public partial class ninjaCharacter : CharacterBody2D
             this.RotationDegrees = 180;
             this.Scale = new Vector2(1, -1);
         }
+        //Fim da direcaoo
 
+        //Set de variaveis e animacoes
+        if ((this.Position.Y) > 500)
+        {
+            GetTree().ReloadCurrentScene();
+        }
+        Animacoes.Set("parameters/IWR/blend_position", velocity.Abs());
+
+        if (dashTimer > 0)
+        {
+            dashTimer--;
+            velocity.X = direction.X * Speed * 3;
+        }
+        staminaComponent.takeHealth(1);
+        Velocity = velocity;
+        MoveAndSlide();
+        //-----
     }
 
     private void _animation_finished(string nomeAnimacao)
     {
-        if(nomeAnimacao == "ataque")
+        if (nomeAnimacao == "ataque")
         {
             colisaoAtaque.Disabled = true;
         }
